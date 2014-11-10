@@ -133,18 +133,18 @@ L["Sets the action performed when Right clicking holding ALT"] = "Legt fest, wel
 L["Ctrl Right Click"] = "Strg + Rechtsklick"
 L["Sets the action performed when right clicking holding CTRL"] = "Legt fest, welche Aktion ausgef\195\188hrt wird, wenn ein Rechtsklick bei gehaltener Strg-Taste erfolgt."
 L["Button 4 Click"] = "4. Maustaste"
-L["Sets the action performed when clicking mouse button 4"] = true
+L["Sets the action performed when clicking mouse button 4"] = "Legt fest, welche Aktion ausgef\195\188hrt wird, wenn die 4. Maustaste geklickt wird."
 L["Alt Button 4 Click"] = "Alt + 4. Maustaste"
-L["Sets the action performed when pressing mouse 4 while holding ALT"] = true
+L["Sets the action performed when pressing mouse 4 while holding ALT"] = "Legt fest, welche Aktion ausgef\195\188hrt wird, wenn ein Klick der 4. Maustaste bei gehaltener Alt-Taste erfolgt."
 L["Ctrl Button 4 Click"] = "Strg + 4. Maustaste"
-L["Sets the action performed when clicking 4th mouse button holding CTRL"] = true
+L["Sets the action performed when clicking 4th mouse button holding CTRL"] = "Legt fest, welche Aktion ausgef\195\188hrt wird, wenn ein Klick der 4. Maustaste bei gehaltener Strg-Taste erfolgt."
 
 -- Minimap Options
-L["MiniMap Options"] = true
-L["Combine Blizzard Minimap with Carbonite Minimap"] = true
-L["When enabled, Carbonite will combine the minimap into itself to create a more functional minimap for you (RELOAD REQUIRED)"] = true
-L["Minimap Shape is Square"] = true
-L["When enabled, Carbonite will change the minimap shape from circle to square"] = true
+L["MiniMap Options"] = "Minimap-Einstellungen"
+L["Combine Blizzard Minimap with Carbonite Minimap"] = "Blizzard-Minimap mit Carbonite-Minimap kombinieren"
+L["When enabled, Carbonite will combine the minimap into itself to create a more functional minimap for you (RELOAD REQUIRED)"] = "Wenn aktiv, wird Carbonite die Minimap von Blizzard mit der eigenen Map kombinieren."
+L["Minimap Shape is Square"] = "Eckige Minimap"
+L["When enabled, Carbonite will change the minimap shape from circle to square"] = "Schaltet zwischen einer rechteckigen und einer kreisf\195\182rmigen Minimap um"
 L["Minimap is drawn above icons"] = true
 L["When enabled, Carbonite will draw the minimap above your map icons, you can use the CTRL key on your keyboard to toggle which layer is top"] = true
 L["Minimap Icon Scale"] = true
