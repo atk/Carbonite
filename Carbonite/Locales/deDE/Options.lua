@@ -25,9 +25,9 @@ L["Deletes a profile from the database."] = "L\195\182scht ein Profil aus der Da
 -- Main Menu
 L["Main Options"] = "Haupteinstellungen"
 L["\nCarbonite is a full featured, powerful map addon providing a versitile easy to use google style map which either can replace or work with the current blizzard maps.\n\nThrough modules it can also be expanded to do even more to help make your game easier."] = true
-L["Release Version"] = "Release-Version"
+L["Release Version"] = "Veröffentlichungs-Version"
 L["Maintained by"] = "Gepflegt von"
-L["Website"] = true
+L["Website"] = "Homepage"
 L["For support, please visit the forums for Carbonite on WoW Interface."] = "Zur Unterst\195\188tzung besuchen Sie bitte das Forum f\195\188r Carbonite auf WoW Interface."
 L["Special thanks to"] = "Besonderen Dank an"
 L["Cirax for Carbonite2 Logo"] = "Cirax f\195\188r das Carbonite2-Logo"
@@ -334,7 +334,7 @@ L["Skin"] = "Darstellung"
 L["Tracking HUD"] = "Wegweiser"
 
 -- General Text
-L["Reload UI"] = "Interface neu laden"
+L["Reload UI"] = "Oberf\195\164che neu laden"
 L["Reset options"] = "Einstellungen zur\195\188cksetzen"
 L["Reset global options"] = "Globale  Einstellungen zur\195\188cksetzen"
 L["Reset window layouts"] = "Fensterlayout zur\195\188cksetzen"
