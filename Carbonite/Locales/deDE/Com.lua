@@ -5,9 +5,9 @@ end
 local L = LibStub("AceLocale-3.0"):NewLocale("Carbonite", "deDE")
 if not L then return end
 
-L["reached level"] = "Ebene erreicht"
-L["Monitor Error: All 10 chat channels are in use"] = "\195\156berwachungs-Fehler: Alle 10 Chat-Kan\195\164le werden benutzt"
-L["This will disable some communication features"] = "Das wird einige Kommunikations-F\195\164higkeiten ausschalten"
+L["reached level"] = "Erreichtes Level"
+L["Monitor Error: All 10 chat channels are in use"] = "\195\156berwachungsfehler: Alle 10 Chat-Kan\195\164le werden benutzt"
+L["This will disable some communication features"] = "Das wird einige Kommunikationsfunktionen ausschalten"
 L["You may free channels using the chat tab"] = "Kan\195\164le k\195\182nnen \195\188ber den Chat-Tab freigegeben werden"
 L["chat channel(s)!"] = "Chat-Kan\195\164le!"
 L["Need"] = "Ben\195\182tigt"
