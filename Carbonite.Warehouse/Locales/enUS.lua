@@ -1,7 +1,6 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("Carbonite.Warehouse", "enUS", true)
 if not L then return end
 
-L["DurPattern"] = "^Durability (%d+) / (%d+)"
 L["Warehouse Options"] = true
 L["Add Warehouse Tooltip"] = true
 L["When enabled, will show warehouse information in hover tooltips of items"] = true
@@ -24,4 +23,4 @@ L["Sort By Slot"] = true
 L["Import %s's character data and reload?"] = true
 L["Overwrite all character settings and reload?"] = true
 L["Warehouse: %d characters"] = true 
-L["DurPattern"] = true
+L["DurPattern"] = "^Durability (%d+) / (%d+)"
