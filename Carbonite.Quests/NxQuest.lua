@@ -6592,7 +6592,7 @@ function Nx.Quest.List:Update()
 								
 								done = false
 							end
-							if not desc then desc = L["?"] end
+							if not desc then desc = "?" end
 							color = done and "|cff5f5f6f" or "|cff9f9faf"
 							str = format ("     %s%s", color, desc)
 
@@ -6989,7 +6989,7 @@ function Nx.Quest.List:Update()
 
 						local name, zone, loc = Nx.Quest:UnpackObjectiveNew (obj)
 						if not name then
-							name = L["?"]
+							name = "?"
 						end
 --						str = zone and "|cff505050o" or ""						
 						if zone then
@@ -9704,7 +9704,7 @@ function Nx.Quest:UnpackSE (obj)
 
 	if not name then
 --		Nx.prt ("UnpackSE err %s (%s)", i, obj)
-		name = L["?"]
+		name = "?"
 	end
 
 	if #obj == 2 then
@@ -10448,9 +10448,9 @@ function Nx.Quest:DecodeComRcv (info, msg)
 				local oname = self:UnpackObjective (obj)
 
 				if obji == n then
-					oname = L["|cffcfcfff"] .. oname
+					oname = "|cffcfcfff" .. oname
 				else
-					oname = L["|cffafafaf"] .. oname
+					oname = "|cffafafaf" .. oname
 				end
 
 				if cnt == 0 then
@@ -10748,10 +10748,6 @@ function Nx.Quest:UnpackLocPtOff (locStr)
 end
 -------------------------------------------------------------------------------
 -- EOF
-
-
-
-
 
 
 
