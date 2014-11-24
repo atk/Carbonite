@@ -2,7 +2,7 @@ if ( GetLocale() ~= "deDE" ) then -- erste Übersetzungen bitte überprüfen
 	return;
 end
 
-local L = LibStub("AceLocale-3.0"):NewLocale("Carbonite.Quest", "deDE") 
+local L = LibStub("AceLocale-3.0"):NewLocale("Carbonite.Quest", "deDE")
 if not L then return end
 
 L["Quest Options"] = "Quest Einstellungen"

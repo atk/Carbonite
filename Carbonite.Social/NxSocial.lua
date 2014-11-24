@@ -48,7 +48,7 @@ local defaults = {
 			PunkMAreaColor = ".09|.44|.09|1",
 			PunkMAreaSize = 200,
 			PunkMAlertText = true,
-			PunkMAlertSnd = true,			
+			PunkMAlertSnd = true,
 			PunkShowInSafeArea = false,
 			PunkNewLocalWarnChat = true,
 			PunkNewLocalWarnSnd = false,
@@ -56,7 +56,7 @@ local defaults = {
 			PunkTWinTitle = "Punks:",
 			PunkTWinHide = false,
 			PunkTWinLock = false,
-			PunkTWinMaxButs = 5,  
+			PunkTWinMaxButs = 5,
 			SocialEnable = true,
 			PunkEnable = true,
 			TeamTWinEnable = false,
@@ -64,12 +64,12 @@ local defaults = {
 			TeamTWinMaxButs = 15,
 		},
 	},
-}		
+}
 
 local socialoptions
 local function socialConfig()
 	if not socialoptions then
-		socialoptions = {		
+		socialoptions = {
 			type = "group",
 			name = L["Social Options"],
 			childGroups	= "tab",
@@ -91,8 +91,8 @@ local function socialConfig()
 							set = function()
 								Nx.scdb.profile.Social.SocialEnable = not Nx.scdb.profile.Social.SocialEnable
 								Nx.Opts.NXCmdReload()
-							end,				
-						},							
+							end,
+						},
 					},
 				},
 				punkWin = {
@@ -112,8 +112,8 @@ local function socialConfig()
 							set = function()
 								Nx.scdb.profile.Social.PunkEnable = not Nx.scdb.profile.Social.PunkEnable
 								Nx.Opts.NXCmdReload()
-							end,				
-						},							
+							end,
+						},
 						spacer = {
 							order = 2,
 							type = "description",
@@ -132,7 +132,7 @@ local function socialConfig()
 							set = function()
 								Nx.scdb.profile.Social.PunkTWinHide = not Nx.scdb.profile.Social.PunkTWinHide
 								Nx.Window:SetAttribute("NxPunkHUD","H",Nx.scdb.profile.Social.PunkTWinHide)
-							end,				
+							end,
 						},
 						pnklock = {
 							order = 4,
@@ -146,8 +146,8 @@ local function socialConfig()
 							set = function()
 								Nx.scdb.profile.Social.PunkTWinLock = not Nx.scdb.profile.Social.PunkTWinLock
 								Nx.Window:SetAttribute("NxPunkHUD","L",Nx.scdb.profile.Social.PunkTWinLock)
-							end,				
-						},		
+							end,
+						},
 						pnktitle = {
 							order = 5,
 							type = "input",
@@ -157,10 +157,10 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkTWinTitle
 							end,
 							set = function(info,value)
-								Nx.scdb.profile.Social.PunkTWinTitle = value								
+								Nx.scdb.profile.Social.PunkTWinTitle = value
 								Nx.Opts.NXCmdReload()
-							end,				
-						},			
+							end,
+						},
 						maxtargets = {
 							order = 6,
 							type = "range",
@@ -174,16 +174,16 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkTWinMaxButs
 							end,
 							set = function(info,value)
-								Nx.scdb.profile.Track.PunkTWinMaxButs = value								
+								Nx.scdb.profile.Track.PunkTWinMaxButs = value
 								Nx.Opts.NXCmdReload()
-							end,				
+							end,
 						},
 						spacer2 = {
 							order = 7,
 							type = "description",
 							width = "full",
 							name = " ",
-						},			
+						},
 						pnkotxt = {
 							order = 8,
 							type = "toggle",
@@ -194,9 +194,9 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkMAlertText
 							end,
 							set = function()
-								Nx.scdb.profile.Social.PunkMAlertText = not Nx.scdb.profile.Social.PunkMAlertText								
-							end,				
-						},			
+								Nx.scdb.profile.Social.PunkMAlertText = not Nx.scdb.profile.Social.PunkMAlertText
+							end,
+						},
 						pnkosnd = {
 							order = 9,
 							type = "toggle",
@@ -208,8 +208,8 @@ local function socialConfig()
 							end,
 							set = function()
 								Nx.scdb.profile.Social.PunkMAlertSnd = not Nx.scdb.profile.Social.PunkMAlertSnd
-							end,				
-						},				
+							end,
+						},
 						pnktxt = {
 							order = 10,
 							type = "toggle",
@@ -221,8 +221,8 @@ local function socialConfig()
 							end,
 							set = function()
 								Nx.scdb.profile.Social.PunkNewLocalWarnChat = not Nx.scdb.profile.Social.PunkNewLocalWarnChat
-							end,				
-						},			
+							end,
+						},
 						pnksnd = {
 							order = 11,
 							type = "toggle",
@@ -234,8 +234,8 @@ local function socialConfig()
 							end,
 							set = function()
 								Nx.scdb.profile.Social.PunkNewLocalWarnSnd = not Nx.scdb.profile.Social.PunkNewLocalWarnSnd
-							end,				
-						},										
+							end,
+						},
 						pnksafe = {
 							order = 12,
 							type = "toggle",
@@ -246,15 +246,15 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkShowInSafeArea
 							end,
 							set = function()
-								Nx.scdb.profile.Social.PunkShowInSafeArea = not Nx.scdb.profile.Social.PunkShowInSafeArea								
-							end,				
-						},				
+								Nx.scdb.profile.Social.PunkShowInSafeArea = not Nx.scdb.profile.Social.PunkShowInSafeArea
+							end,
+						},
 						spacer3 = {
 							order = 13,
 							type = "description",
 							width = "full",
 							name = " ",
-						},			
+						},
 						pnkshowmap = {
 							order = 14,
 							type = "toggle",
@@ -266,8 +266,8 @@ local function socialConfig()
 							end,
 							set = function()
 								Nx.scdb.profile.Social.MapShowPunks = not Nx.scdb.profile.Social.MapShowPunks
-							end,				
-						},				
+							end,
+						},
 						pnkiconcol = {
 							order = 15,
 							type = "color",
@@ -285,8 +285,8 @@ local function socialConfig()
 							set = function(_,r,g,b,a)
 								Nx.scdb.profile.Social.PunkIconColor = r .. "|" .. g .. "|" .. b .. "|" .. a
 								Nx.Social:SetCols()
-							end,						
-						},															
+							end,
+						},
 						pnkareacol = {
 							order = 16,
 							type = "color",
@@ -304,11 +304,11 @@ local function socialConfig()
 							set = function(_,r,g,b,a)
 								Nx.scdb.profile.Social.PunkAreaColor = r .. "|" .. g .. "|" .. b .. "|" .. a
 								Nx.Social:SetCols()
-							end,												
+							end,
 						},
 						pnkareasize = {
 							order = 17,
-							type = "range",							
+							type = "range",
 							name = L["Punk Area Size"],						
 							desc = L["Sets the size of the punk area notify on the map."],
 							min = 0,
@@ -319,9 +319,9 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkAreaSize
 							end,
 							set = function(info,value)
-								Nx.scdb.profile.Social.PunkAreaSize = value																
-							end,				
-						},								
+								Nx.scdb.profile.Social.PunkAreaSize = value
+							end,
+						},
 						pnkmareacol = {
 							order = 18,
 							type = "color",
@@ -337,13 +337,13 @@ local function socialConfig()
 								return r,g,b,a
 							end,
 							set = function(_,r,g,b,a)
-								Nx.scdb.profile.Social.PunkMAreaColor = r .. "|" .. g .. "|" .. b .. "|" .. a		
-								Nx.Social:SetCols()								
-							end,												
+								Nx.scdb.profile.Social.PunkMAreaColor = r .. "|" .. g .. "|" .. b .. "|" .. a
+								Nx.Social:SetCols()
+							end,
 						},
 						pnkmareasize = {
 							order = 19,
-							type = "range",							
+							type = "range",
 							name = L["Others Punk Area Size"],						
 							desc = L["Sets the size of the punk area notify on the map from other carbonite users."],
 							min = 0,
@@ -354,9 +354,9 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkMAreaSize
 							end,
 							set = function(info,value)
-								Nx.scdb.profile.Social.PunkMAreaSize = value																
-							end,				
-						},			
+								Nx.scdb.profile.Social.PunkMAreaSize = value
+							end,
+						},
 						pnkmap = {
 							order = 20,
 							type = "toggle",
@@ -368,8 +368,8 @@ local function socialConfig()
 							end,
 							set = function()
 								Nx.scdb.profile.Social.PunkShowInBG = not Nx.scdb.profile.Social.PunkShowInBG
-							end,				
-						},										
+							end,
+						},
 						pnkbgareacol = {
 							order = 21,
 							type = "color",
@@ -385,13 +385,13 @@ local function socialConfig()
 								return r,g,b,a
 							end,
 							set = function(_,r,g,b,a)
-								Nx.scdb.profile.Social.PunkBGAreaColor = r .. "|" .. g .. "|" .. b .. "|" .. a		
-								Nx.Social:SetCols()								
-							end,												
+								Nx.scdb.profile.Social.PunkBGAreaColor = r .. "|" .. g .. "|" .. b .. "|" .. a
+								Nx.Social:SetCols()
+							end,
 						},
 						pnkbgareasize = {
 							order = 22,
-							type = "range",							
+							type = "range",
 							name = L["Battleground Punk Area Size"],
 							desc = L["Sets the size of the punk area in BGs."],
 							min = 0,
@@ -402,11 +402,11 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.PunkBGAreaSize
 							end,
 							set = function(info,value)
-								Nx.scdb.profile.Social.PunkBGAreaSize = value																
-							end,				
-						},								
-					},					
-				},		
+								Nx.scdb.profile.Social.PunkBGAreaSize = value
+							end,
+						},
+					},
+				},
 				teamWin = {
 					type = "group",
 					name = L["Team Options"],
@@ -424,8 +424,8 @@ local function socialConfig()
 							set = function()
 								Nx.scdb.profile.Social.TeamTWinEnable = not Nx.scdb.profile.Social.TeamTWinEnable
 								Nx.Opts.NXCmdReload()
-							end,				
-						},							
+							end,
+						},
 						teamhide = {
 							order = 1,
 							type = "toggle",
@@ -438,11 +438,11 @@ local function socialConfig()
 							set = function()
 								Nx.scdb.profile.Social.TeamTWinHide = not Nx.scdb.profile.Social.TeamTWinHide
 								Nx.Window:SetAttribute("NxTeamHUD","H",Nx.scdb.profile.Social.TeamTWinHide)
-							end,				
-						},		
+							end,
+						},
 						teamtargets = {
 							order = 2,
-							type = "range",							
+							type = "range",
 							name = L["number of target buttons"],						
 							desc = L["Sets the number of buttons for team members in the teamhud (RELOAD REQUIRED)"],
 							min = 0,
@@ -453,12 +453,12 @@ local function socialConfig()
 								return Nx.scdb.profile.Social.TeamTWinMaxButs
 							end,
 							set = function(info,value)
-								Nx.scdb.profile.Track.TeamTWinMaxButs = value								
+								Nx.scdb.profile.Track.TeamTWinMaxButs = value
 								Nx.Opts.NXCmdReload()
-							end,				
-						},						
+							end,
+						},
 					},
-				},				
+				},
 			},
 		}
 	end
@@ -472,7 +472,7 @@ function CarboniteSocial:OnInitialize()
 	end
 	Nx.scdb = LibStub("AceDB-3.0"):New("NXSocial",defaults, true)
 	Nx.scdb:SetProfile(Nx.db:GetCurrentProfile())
-	tinsert(Nx.dbs,Nx.scdb)	
+	tinsert(Nx.dbs,Nx.scdb)
 	local soc = Nx.scdb.profile.SocialData
 
 	if not soc or soc.Version < Nx.VERSIONSOCIAL then
@@ -496,11 +496,11 @@ function CarboniteSocial:OnInitialize()
 		t["Pk"] = {}
 	end
 
-	soc[rn]["PkAct"] = soc[rn]["PkAct"] or {}	
+	soc[rn]["PkAct"] = soc[rn]["PkAct"] or {}
 	Nx.Social:Init()
 	CarboniteSocial:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", "OnCombat_log_event_unfiltered")
 	CarboniteSocial:RegisterEvent("WORLD_MAP_UPDATE", "On_Event")
-	CarboniteSocial:RegisterComm("carbmodule",Nx.Social.OnChat_msg_addon)	
+	CarboniteSocial:RegisterComm("carbmodule",Nx.Social.OnChat_msg_addon)
 --	CarboniteSocial.EventTimer = CarboniteSocial:ScheduleRepeatingTimer("On_Update",2)
 	Nx:AddToConfig("Social & Punks Module",socialConfig(),"Social & Punks Module")
 	Nx.Social:SetCols()
@@ -526,7 +526,7 @@ function CarboniteSocial:On_Event(event,...)
 		Nx.Social.PunksHUD:Update()
 		Nx.Social.TeamHUD:Update()
 		Nx.Social:OnUpdate()
-				
+
 		local targetName = UnitName ("target")
 		local BG = Nx.InBG
 		if UnitIsPlayer ("target") and UnitIsEnemy ("player", "target") then
@@ -546,7 +546,7 @@ function CarboniteSocial:On_Event(event,...)
 				end
 				Nx.Social:AddLocalPunk (moName, nil, lvl, UnitClass ("mouseover"))
 			end
-		end	
+		end
 		if Nx.ModPAction == "PUNK_DECODE" then
 			Nx.ModPAction = ""
 			Nx.Social:DecodeComRcvPunks (Nx.pTEMPname, Nx.pTEMPinfo, Nx.pTEMPmsg)
@@ -584,10 +584,10 @@ function Nx.Social:Init()
 	self.TeamHUD:Create()
 
 	CarboniteSocial:RegisterEvent("PLAYER_REGEN_DISABLED","EventHandler")
-	
-	hooksecurefunc ("ShowUIPanel", Nx.Social.PShowUIPanel)	
+
+	hooksecurefunc ("ShowUIPanel", Nx.Social.PShowUIPanel)
 	hooksecurefunc ("HideUIPanel", Nx.Social.PHideUIPanel)
-	hooksecurefunc ("CloseWindows", Nx.Social.PCloseWindows)	
+	hooksecurefunc ("CloseWindows", Nx.Social.PCloseWindows)
 	Nx.Window:SetAttribute("NxPunkHUD","H",Nx.scdb.profile.Social.PunkTWinHide)
 	Nx.Window:SetAttribute("NxPunkHUD","L",Nx.scdb.profile.Social.PunkTWinLock)
 end
@@ -1611,7 +1611,7 @@ function Nx.Social.List:Update()
 			if punk.Class then
 				list:ItemSet (4, punk.Class)
 			end
-			local mapName = Nx.MapIdToName[punk.MId] or "?"
+			local mapName = GetMapNameByID(punk.MId) or "?"
 			list:ItemSet (5, format ("%s %d %d", mapName, punk.X, punk.Y))
 
 			list:ItemSet (6, format ("Near %s", punk.FinderName))
@@ -1654,7 +1654,7 @@ function Nx.Social.List:Update()
 			end
 
 			if mId then
-				local name = Nx.MapIdToName[tonumber (mId, 16)] or "?"
+				local name = GetMapNameById(tonumber (mId, 16)) or "?"
 				list:ItemSet (5, name)
 			end
 
@@ -1734,7 +1734,7 @@ function Nx.Social:AddLocalPunk (name, plyrNear, level, class)
 	local x, y = map.PlyrRZX, map.PlyrRZY
 
 	if plyrNear then
-		
+
 		plyrNear = strmatch (plyrNear, "[^-]+")		-- Remove server name
 		local i = Nx.GroupMembers[plyrNear]
 
@@ -1898,14 +1898,13 @@ end
 function Nx.Social:UpdateIcons (map)
 	if Nx.scdb.profile.Social.PunkEnable then
 	if Nx.Tick % 120 == 4 then
-		self:CalcPunks()		
+		self:CalcPunks()
 	end
 
 	local math = math
 	local alt = IsAltKeyDown()
 	local tm = GetTime()
 
-	local idToName = Nx.MapIdToName
 	local punks = self.Punks
 	local punksA = self.PunksActive
 
@@ -1915,7 +1914,7 @@ function Nx.Social:UpdateIcons (map)
 	local areaR, areaG, areaB = Nx.Social.Cols["areaR"], Nx.Social.Cols["areaG"], Nx.Social.Cols["areaB"]
 	local iconR, iconG, iconB, iconA = Nx.Social.Cols["iconR"], Nx.Social.Cols["iconG"], Nx.Social.Cols["iconB"], Nx.Social.Cols["iconA"]
 	local areaRM, areaGM, areaBM = Nx.Social.Cols["areaRM"], Nx.Social.Cols["areaGM"], Nx.Social.Cols["areaBM"]
-	
+
 	local showInSafeArea = Nx.scdb.profile.Social.PunkShowInSafeArea
 
 	local decay = .24
@@ -1928,7 +1927,7 @@ function Nx.Social:UpdateIcons (map)
 			return
 		end
 
-		size = Nx.scdb.profile.Social.PunkBGAreaSize * map.ScaleDraw		
+		size = Nx.scdb.profile.Social.PunkBGAreaSize * map.ScaleDraw
 		areaR = Nx.Social.Cols["areaBGR"]
 		areaG = Nx.Social.Cols["areaBGG"]
 		areaB = Nx.Social.Cols["areaBGB"]
@@ -2060,13 +2059,13 @@ function Nx.Social:UpdateIcons (map)
 			end
 		end
 	end
-    
+
 	if alt then
 		map.Level = map.Level - 11
 	else
 		map.Level = map.Level + 3
 	end
-	end	
+	end
 
 end
 
@@ -2097,7 +2096,7 @@ function Nx.Social:GetPunkPasteInfo (name)
 
 		local lvl = punk.Lvl > 0 and punk.Lvl or "?"
 		local class = punk.Class or "?"
-		return format ("Punk: %s, %s %s at %s %d %d", name, lvl, class, Nx.MapIdToName[punk.MId] or "?", punk.X, punk.Y)
+		return format ("Punk: %s, %s %s at %s %d %d", name, lvl, class, GetMapNameById(punk.MId) or "?", punk.X, punk.Y)
 	end
 
 	return ""
@@ -2667,7 +2666,7 @@ function Nx.Social.TeamHUD:Update()
 --PAIDE!
 end
 
-function Nx.Social.PShowUIPanel (frame)		
+function Nx.Social.PShowUIPanel (frame)
 	if frame then
 		if frame == _G["FriendsFrame"] and Nx.scdb.profile.Social.SocialEnable then
 			Nx.Social:ShowUIPanel (frame)
