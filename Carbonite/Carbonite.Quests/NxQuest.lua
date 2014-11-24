@@ -7137,7 +7137,10 @@ function Nx.Quest:UpdateIcons (map)
 	local ptSz = 4 * map.ScaleDraw
 
 	local navscale = Map.Maps[1].IconNavScale * 16
-	local showOnMap = Quest.Watch.ButShowOnMap:GetPressed()
+	local showOnMap
+	if Quest.Watch.ButShowOnMap ~= nil then
+		showOnMap = Quest.Watch.ButShowOnMap:GetPressed()
+	end
 
 	local opts = self.GOpts
 	local showWatchAreas = Nx.qdb.profile.Quest.MapShowWatchAreas

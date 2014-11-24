@@ -2288,7 +2288,7 @@ function Nx.Map:MinimapUpdate()
 
 			local sz = scales[n]
 
-			if self:ClipMMW (mm, self.PlyrX, self.PlyrY, sz, sz) then
+    if sz ~= nil and self:ClipMMW (mm, self.PlyrX, self.PlyrY, sz, sz) then
 --				Nx.prt ("MM #%d sz %d", n, sz)
 				zoomType = n
 --				self.MMSize = sz * self.ScaleDraw
