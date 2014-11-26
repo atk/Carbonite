@@ -34,7 +34,7 @@ function Nx.Travel:Init()
 	TakeTaxiNode = self.TakeTaxiNode		-- Hook it
 
 	local tr = {}
-	for n = 1, 6 do
+	for n = 1, 7 do
 		tr[n] = {}
 	end
 	self.Travel = tr
@@ -65,12 +65,6 @@ function Nx.Travel:Add (typ)
 					local fac,name,locName,zone,x,y = Nx.Split("|",Nx.NPCData[tonumber(num)])
 					fac,zone,x,y = tonumber(fac),tonumber(zone),tonumber(x),tonumber(y)
 					local _, _, _, _, cont, _, _ = Nx.Split ("|", Nx.Zones[tonumber(zone)])
-					if cont == "7" then
-						cont = 4
-					end
-					if cont == "8" then
-						cont = 5
-					end
 					local tdata = self.Travel[tonumber(cont)]
 					if fac ~= hideFac then
 						local mapId = zone

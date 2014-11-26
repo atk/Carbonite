@@ -31,7 +31,8 @@ L["Change Text"] = "Text \195\164ndern"
 L["Delete Info Window"] = "L\195\182sche Info Fenster"
 L["Delete"] = "L\195\182schen"
 L["Cancel"] = "Abbrechen"
-
+ 
 L["One minute until the Arena"] = "Eine Minute bis zum Arenastart"
 L["Thirty seconds until the Arena"] = "Drei\195\159\ig Sekunden bis zum Arenastart"
 L["Fifteen seconds until the Arena"] = "F\195\188nfzehn Sekunden bis zum Arenastart"
+

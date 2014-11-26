@@ -11,8 +11,6 @@ L["Gas"] = "Gas"
 L["Everfrost"] = "Immerfrost"
 L["Ooze Covered"] = "Schlammbedeckte"
 
-
-
 -- Herbs
 L["Adder's Tongue"] = "Schlangenzunge"
 L["Ancient Lichen"] = "Urflechte"

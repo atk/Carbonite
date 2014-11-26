@@ -721,7 +721,7 @@ end
 
 function Nx.Weekly:CalcEpoch()
 	local anum,amonth,aday,ayear = CalendarGetDate()
-	local ahour,amin = GetGameTime()		
+	local ahour,amin = GetGameTime()
 	return time({year = ayear, month = amonth, day = aday, hour = ahour, min = amin})
 end
 
