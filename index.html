@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset value="utf-8"/>
+<title>Carbonite - WoW Addon</title>
+<link rel="shortcut icon" type="image/x-icon" href="carbonite.ico"/>
+<style>
+body {
+	margin: 0px;
+	padding: 10px 30px 180px 30px;
+	background-color: #000000;
+	background: linear-gradient(45deg, #000000 8%, transparent 8%, transparent 92%, #000000 92%), linear-gradient(-45deg, #000000 8%, transparent 8%, transparent 92%, #000000 92%), linear-gradient(-45deg, #000000 8%, transparent 8%, transparent 92%, #000000 92%), linear-gradient(45deg, #000000 8%, transparent 8%, transparent 92%, #000000 92%), linear-gradient(-45deg, transparent 17%, #000000 17%, #000000 21%, transparent 21%, transparent 79%, #000000 79%, #000000 83%, transparent 83%), linear-gradient(45deg, transparent 29%, #000000 29%, #000000 33%, transparent 33%, transparent 67%, #000000 67%, #000000 71%, transparent 71%), linear-gradient(-135deg, #101010 10%, #060606 33%, transparent 33%, transparent 67%, #0B0B0B 67%, #101010 90%), linear-gradient(135deg, transparent 21%, #0B0B0B 21%, #161616 32.6%, #0B0B0B 64.5%, #101010 70.3%, #060606 79%, transparent 79%), linear-gradient(-135deg, transparent 21%, #0B0B0B 21%, #101010 40%, #101010 60%, #060606 79%, transparent 79%);
+	background-position: 0em 1em, 1em 0, 0em 1em, 1em 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+	background-size: 2em 2em;
+	color: #AAAAAA;
+	font-family: sans-serif;
+}
+h1 { 
+	padding: 30px 0px 30px 0px;
+	margin: 0px 0px 30px 0px;
+	text-align: center;
+	font-family: serif;
+	font-variant: small-caps;
+	font-size: 64px;
+	font-weight: 400;
+	color: #FFFFFF;
+	color: rgba(0, 0, 60, 0.3);
+	text-shadow: #FFFFFF 0px 0px 2px, #001133 0px 4px 4px, #FFFFAA 0px -2px 4px, #FFFFFF 0px 0px 6px, #FFFFFF 0px 0px 16px, #000000 2px 8px 4px;
+	position: relative;
+}
+h1:before {
+	content: "carbonite";
+	text-shadow: none;
+	color: transparent;
+	text-shadow: #BBDDFF 0px 0px 6px;
+	opacity: 0.5;
+	position: absolute;
+	margin-top: 36px;
+	margin-left: 12px;
+	transform: perspective(120px) rotateX(230deg) scaleX(1.125);
+}
+h1:after {
+	content: "wow addon";
+	color: #445577;
+	font-family: sans-serif;
+	font-size: 12px;
+	font-variant: normal;
+	line-height: 12px;
+	text-shadow: none;
+	position: absolute;
+	top: 36px;
+	margin-left: -66px;
+}
+a {
+	color: #BBBBFF;
+	text-shadow: 0px 0px 2px #000000;
+}
+.nav {
+	list-style: none;
+	line-height: 0px;
+	text-align: justify;
+	min-width: 400px;
+	max-width: 800px;
+	margin: 20px auto 60px;
+	padding: 0px;
+	border-bottom: 1px solid #FFFFFF;
+	display: block;
+	position: relative;
+	box-shadow: inset 0px -3px 3px -2px #999999;
+}
+.nav:after {
+	content: "";
+	display: inline-block;
+	width: 100%;
+	height: 0px;
+	overflow: hidden;
+}
+.nav li { 
+	display: inline-block;
+	margin: 0px 0px -1px 0px;
+	padding: 0px;
+	line-height: 30px;
+}
+.nav li:hover {
+	border-bottom: 4px solid #CCCCCC;
+	margin-bottom: -5px;
+}
+.nav a {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.nav + h2:before,
+body:after, #not#ie8 {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100px;
+	margin: 0px -30px 30px -30px;
+	padding: 0px 30px;
+	/* insert screen shots here; repeat if neccessary to at least 3000px width */
+	background-image: url(http://placekitten.com/600/250), url(http://placekitten.com/200/150), url(http://placekitten.com/300/180), url(http://placekitten.com/600/250), url(http://placekitten.com/200/150), url(http://placekitten.com/300/180), url(http://placekitten.com/600/250), url(http://placekitten.com/200/150), url(http://placekitten.com/300/180);
+	background-position: -100px -65px, 500px -25px, 700px 0px, 1000px -30px, 1600px -40px, 1800px -10px, 2100px 0px, 2700px -50px, 2900px -80px;
+	background-repeat: no-repeat;
+	box-shadow: #FFFFFF 0px 0px 25px, #FFFFFF 0px 0px 15px, #FFFFFF 0px 0px 10px;
+}
+body:after {
+	margin: 100px -30px -60px -30px;
+}
+h2 {
+	border-bottom: 1px solid #666666;
+	color: #FFFFFF;
+	font-weight: 400;
+}
+dt {
+	color: #FFFFFF;
+}
+dd {
+	margin-bottom: 20px;
+}
+.feature {
+	clear: both;
+}
+.feature:nth-child(2n+1) img {
+	float: left;
+	margin: 0px 20px 20px 0px;
+}
+.feature:nth-child(2n+0) img {
+	float: right;
+	margin: 0px 0px 20px 20px;
+}
+</style>
+</head>
+<body>
+	<h1>Carbonite</h1>
+	<ul class="nav">
+		<li><a href="#home">Home</a></li>
+		<li><a href="#features">Features</a></li>
+		<li><a href="#downloads">Downloads</a></li>
+		<li><a href="#install">Install</a></li>
+		<li><a href="http://www.wowinterface.com/forums/forumdisplay.php?f=116">Forums</a></li>
+		<li><a href="#faq">FAQ</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>	
+	<h2 id="home">Home</h2>
+	<p>Carbonite is an Addon for Blizzard&reg;'s World of Warcraft&trade; with quite a lot of features. Originally developed by Carbon Based Creations, LLC, the code was later released under GPL and its development continued by Rythal; he is back and he brought some people to help him. In its current incarnation, it is split into different modules:</p>
+	<dl>
+		<dt>Carbonite</dt>
+		<dd>The base module features Maps, Guide, HUD (TomTom Emulation) and several UI modifications.</dd>
+		<dt>Carbonite.Info</dt>
+		<dd>The info module can display a multitude of informations when- and wherever you need it.</dd>
+		<dt>Carbonite.Notes</dt>
+		<dd>Ever wished you could just mark this spot with a sign? Your prayers have been answered.</dd>
+		<dt>Carbonite.Quests</dt>
+		<dd>Questing was never so easy. Find quest givers, objectives and everything else right on the spot.</dd>
+		<dt>Carbonite.Social</dt>
+		<dd>Be aware of your friends and warned of your enemies with unobtrusive frames.</dd>
+		<dt>Carbonite.Warehouse</dt>
+		<dd>Everything your characters have, in one place, for your convenience.</dd>
+		<dt>Carbonite.Weekly</dt>
+		<dd>Losing track of which of your twinks did the World boss, LFR or weekly quest? Not anymore.</dd>
+	</dl>
+	<h2 id="features">Features</h2>
+	<p>Carbonite has more Features than you could shake a stick at.</p>
+	<div class="feature">
+		<img src="http://placekitten.com/600/250" alt="" width="600" height="250"/>
+		<h3>Maps</h3>
+		<p>Carbonite replaces your beloved, yet antiquated minimap and world map (which can still be accessed with [Alt]-[M]) with something that resembles an advanced GPS more than something printed on mere paper. You can use your mouse to navigate and scroll-zoom. Mini map and world map are actually the same, the latter just being bigger, so you have all the mapping informations in one single place.</p>
+		<p>You can simply change the size and position like in any modern user interface. The title bar also shows your position and speed. Superimposed on the map are Point-of-interest icons and dots for your group members, once you scroll into detail. Your movement will leave a trail (if you don't disable that option), so you can easily see where you have been wandering - a great help in subterranean labyrinths.</p>
+		<p>If you hover your mouse on the map, a tooltip will show you everything Carbonite knows about your mouse position, which can be incredibly helpful for sharing positions.</p>
+	</div>
+	<div class="feature">
+		<img src="http://placekitten.com/200/150" alt="" width="200" height="150">
+		<h3>Guide/HUD</h3>
+		<p>You'll never need to ask the guards for directions again. Find NPCs of all kinds in a simple to browse menu and receive an easy route to whatever point you choose (that replaces TomTom). Right-click a point on the map, click "Goto..." and you'll find an arrow showing you where to go on the shortest route. This HUD can be moved on your screen, but it can also be fixed (see Options). There is also a guide that will list everything from a like auctioneers to z like zones for your convenience - everything in there can be set as a target for your HUD.</p>
+		<p>When there are conflicting targets (e.g. Nagrand in Outworlds or on Draenor), your HUD will select the one closest to you. You can of course also disable the HUD in the settings.</p>
+	</div>
+	<div class="feature">
+		<img src="http://placekitten.com/300/180" alt="" width="300" height="180">
+		<h3>Farming</h3>
+		<p>With just 3 clicks, you can set up your HUD to show the shortest route through all your gathering locations in your zone. Farming was never easier. Also, Carbonite will remember all locations you have ever looted.</p>		
+	</div>
+	<div class="feature">
+		<h3>Questing</h3>
+		<p>With Carbonite.Quests, you'll have all the informations you need for questing at hand.</p>
+	</div>
+	<div class="feature">
+		<h3>Notes</h3>
+		<p>Ever wanted to put a sign on a certain spot, saying "here be dragons"? Now you're able to do so, using Carbonite.Notes.</p>
+	</div>
+	<div class="feature">
+		<h3>Weekly grind</h3>
+		<p>...never was so easily tracked, thanks to Carbonite.Weekly.</p>
+	</div>
+	<div class="feature">
+		<h3>Warehouse</h3>
+		<p>Carbonite.Warehouse is a list of all your bags and the banks of all your characters, searchable, conveniently in one place.</p>
+	</div>
+	<h2 id="downloads">Downloads</h2>
+	<p>At the moment, Carbonite and its modules can be found in different places:</p>
+	<h3>WoWInterface</h3>
+	<ul>
+		<li><a href="http://www.wowinterface.com/downloads/info12965-CarboniteMaps.html">Carbonite</a></li>
+		<li><a href="http://www.wowinterface.com/downloads/info23405-CarboniteInfo.html">Carbonite.Info</a></li>
+		<li><a href="http://www.wowinterface.com/downloads/info23406-CarboniteNotes.html">Carbonite.Notes</a></li>
+		<li><a href="http://www.wowinterface.com/downloads/info23404-CarboniteQuests.html">Carbonite.Quests</a></li>
+		<li><a href="http://www.wowinterface.com/downloads/info23407-CarboniteSocial.html">Carbonite.Social</a></li>
+		<li><a href="http://www.wowinterface.com/downloads/info23408-CarboniteWarehouse.html">Carbonite.Warehouse</a></li>
+		<li><a href="http://www.wowinterface.com/downloads/info23409-CarboniteWeekly.html">Carbonite.Weekly</a></li>
+	</ul>	
+	<h3>Curse</h3>
+	<ul>
+		<li><a href="http://www.curse.com/addons/wow/carbonite">Carbonite</a></li>
+		<li><a href="http://www.curse.com/addons/wow/carbonite-info">Carbonite.Info</a></li>
+		<li><a href="http://www.curse.com/addons/wow/carbonite-notes">Carbonite.Notes</a></li>
+		<li><a href="http://www.curse.com/addons/wow/carbonite-quests">Carbonite.Quests</a></li>
+		<li><a href="http://www.curse.com/addons/wow/carbonite-social">Carbonite.Social</a></li>
+		<li><a href="http://www.curse.com/addons/wow/carbonite-warehouse">Carbonite.Warehouse</a></li>
+		<li><a href="http://www.curse.com/addons/wow/carbonite-weekly">Carbonite.Weekly</a></li>
+	</ul>
+	<p>You can also use the Curse Client to keep up to date</p>
+	<h3>Development version on Github</h3>
+	<p>This version is meant for Developers only and can be found <a href="https://github.com/Rythal/Carbonite">here</a>. If you don't already know what to do on here, it's probably not for you.</p>
+	<p>The current version has the following known issues:</p>
+	<ul>
+		<li>_NPCScan is incompatible (unless you install _NPCScan_Overlay and remove the Carbonite.lua)</li>
+	</ul>
+	<h2 id="install">Installation</h2>
+	<p>The contents of each module go into your [WoW]/Interface/Addons folder.</p>
+	<h2 id="faq">FAQ</h2>
+	<dl>
+		<dt>What happened to Carbonite.Items?</dt>
+		<dd>Nobody ever got around to update it since 2012. We'll probably try to update it once we've got everything else running.</dd>
+		<dt>Where can I find help?</dt>
+		<dd>Preferably in our <a href="http://www.wowinterface.com/forums/forumdisplay.php?f=116">Forums</a>. We're probably setting up a Wiki or something with more informations later.</dd>
+		<dt>I'm getting errors - what can I do?</dt>
+		<dd>We want to apologize for your inconvenience. At the moment, Carbonite still undergoes major development, as Blizzard has changed a multitude of things to keep us developers on our heels. Even though we do our best to provide you with an addon that is both powerful and solid, it is possible to get Errors. First thing to do is to disable Carbonite and try if you get the error without it. If that's the case, please be patient and don't yet file the bug report, but first try to disable other addons (yes, for example _NPCScan can cause errors with Carbonite). Now you narrowed it down to Carbonite being the culprit? It's understandable that you'll find it's the time to either comment verbosely in the <a href="http://www.wowinterface.com/forums/forumdisplay.php?f=116">Forum</a> or file a <a href="https://github.com/Rythal/Carbonite/issues/">new issue</a> on github, if you are using the developer version - but wait! Maybe someone else already had the same issue, so better check for that first. Be sure to include the full description and the (shortest possible) list of your installed addons while the error occured.</dd>
+		<dt>How do I stop quest info from being sent to my party?</dt>
+		<dd>The setting "Broadcast Quest Changes To Party" is in the menu when you right click the quest list in the quest log. The quest options page also has this setting.</dd>
+		<dt>Where is my Gatherer Data?</dt>
+		<dd>On your blizzard map; we do have our own data for Carbonite (or at least Rythal is preparing new data at the moment).</dd>
+		<dt>I'm a developer/translator - how can I help you?</dt>
+		<dd>Capital. Go to <a href="https://github.com/Rythal/Carbonite/">github</a>, create a fork, add some useful changes and file a pull request.</dd>
+	</dl>
+	<h2 id="contact">Contact/Legal Info</h2>
+	<p>Carbonite is released under the terms of GPL v2.0; originally developed by Carbon Based Creations, LLC, taken over by Rythal.</p>
+	<p>This website is developed by Alex Lohr (atk@github, atl77@wowinterface)</p>
+	<script>
+		document.body.onclick = function(ev){
+			ev = ev || window.event;
+			ev.target || (ev.target = ev.srcElement);
+			if (ev.target && ev.target.href && /^#(\w+)/.test(ev.target.getAttribute('href'))) {
+				var lo = document.getElementById(RegExp.$1).offsetTop,
+					ld = false;
+				function st() { return window.pageYOffset + 1 ? pageYOffset : document.documentElement.scrollTop || document.body.scrollTop; }
+				(function t() {
+					var d = lo - st();					
+					if (ld != d && (d >= 10 || d <= 10)) { 
+						window.scrollBy(0, 0 | (d / 3)); 
+						window.setTimeout(t, 20);
+						ld = d;
+					} else {
+						window.scrollTo(0, lo);
+						location.href = ev.target.href;
+					}
+				})();
+				return false;
+			}
+		}
+	</script>
+	<!-- 
+
+	TODO
+
+	- Features: at least a rather complete description with Screenshots
+	- Add collage of screenshots (the same we use in Features) below navigation
+
+	 -->
+</body>
+</html>
