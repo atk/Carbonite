@@ -3,6 +3,7 @@
 <head>
 <meta charset value="utf-8"/>
 <title>Carbonite - WoW Addon</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <link rel="shortcut icon" type="image/x-icon" href="carbonite.ico"/>
 <style>
 body {
@@ -128,9 +129,15 @@ dd {
 	float: right;
 	margin: 0px 0px 20px 20px;
 }
+img {
+	max-width: 100%;
+	height: auto;
+}
 </style>
 </head>
 <body>
+	<script>/*<[CDATA[*/document.body.className += ' js' + (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") ? '' : ' no-svg');
+		(screen.width<320||screen.height<320)&&(function(meta) { meta.setAttribute('content', meta.getAttribute('content').replace(/device-width/, '320')); })(document.getElementsByName('viewport')[0])/*]]>*/</script>
 	<h1>Carbonite</h1>
 	<ul class="nav">
 		<li><a href="#home">Home</a></li>
