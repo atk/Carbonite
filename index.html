@@ -138,6 +138,11 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+fieldset {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
 </style>
 </head>
 <body>
@@ -237,8 +242,67 @@ img {
 	<ul>
 		<li>_NPCScan is incompatible (unless you install _NPCScan_Overlay and remove the Carbonite.lua)</li>
 	</ul>
+	<h3 id="upload">Quest DB Upload</h3>
+	<p>You can help improve Carbonite! All you need to do is update your quest data here:</p>
+	<fieldset id="questdata-upload"><input type="file" id="questdata"/> <button id="upload-questdata">Upload</button></fieldset>
+	<script src="pako.min.js"></script>
+	<script>
+
+	(function(){
+		// works only with file API
+		if (!window.FileReader || !window.FormData) {
+			document.getElementById('questdata-upload').style.display = 'hidden';
+			return;
+		}
+		document.getElementById('upload-questdata').onclick = function() {
+			var filefield = document.getElementById('questdata'),
+				file = (filefield.files || [])[0],
+				filereader = new FileReader();
+			if (!file) {
+				alert('No questdata file found! Please try again');
+			} else if (file.name != 'Carbonite.Quests.lua') {
+				alert('Wrong file. You are only supposed to upload Carbonite.Quests.lua!');
+			} else {
+				filereader.onloadend = function() {
+					var output = { lang: "?", questdata: [] };
+					filereader.result.replace(/\["UserLocale"\]\s*=\s*"\s*([a-z]\w+)"|(\[\d+\]\s*=\s*".*?")/g, function(_, locale, quest) {
+						if (locale) {
+							output.lang = locale;
+						} else if (quest) {
+							output.questdata.push(quest);
+						}
+					});
+					output = (output.lang + '\n' + output.questdata.join('\n'));
+					if (output.length < 10) {
+						alert('Error: Malformed Questdata file!');
+						return;
+					}
+					var xhr = new XMLHttpRequest(),
+						upload = pako.gzip(output),
+						boundary = '----CarboniteUploadBoundary' + (+new Date()).toString(16) + (0 | Math.random() * 1000).toString(16),
+						postdata = [];
+					('--' + boundary + '\r\nContent-Disposition: form-data; name="carb"; filename="carb_questdata.gz"\r\n' +
+						'Content-Type: application/octet-stream\r\n\r\n').replace(/[^\x00]/g, function(c) { postdata.push(c.charCodeAt(0)); });
+					for (var i = 0, l = upload.length; i < l; i++) { postdata.push(upload[i]); }
+					('\r\n--' + boundary + '--\r\n').replace(/[^\x00]/g, function(c) { postdata.push(c.charCodeAt(0)); });
+					xhr.open('POST', 'http://dirk.hekko.pl/carb_q/upload');
+					xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
+					xhr.onreadystatechange = function() {
+						if (this.readyState != 4) { return; }
+						if (this.status == 200) { alert('Upload successful'); }
+						else if (this.status == 403) { alert('Upload failed'); }
+					}
+					// thanks to the rather ugly way JS works with strings, we have to use a typed Array
+					xhr.send(new Uint8Array(postdata));
+				}
+				filereader.readAsBinaryString(file);
+			}
+		}
+	})();
+	</script>
+	<p>You'll find the Carbonite.Quests.lua inside your <code>[WoW]\WTF\Account\[Account]\SavedVariables</code> directory. [WoW] is your World of Warcraft installation folder and [Account] is your internal account number, something like "52982412#1". Thank you for your help!</p>
 	<h2 id="install">Installation</h2>
-	<p>The contents of each module go into your [WoW]/Interface/Addons folder.</p>
+	<p>The contents of each module go into your [WoW]\Interface\Addons folder.</p>
 	<h2 id="faq">FAQ</h2>
 	<dl>
 		<dt>What happened to Carbonite.Items?</dt>
