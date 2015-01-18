@@ -295,7 +295,7 @@ fieldset {
 					// thanks to the rather ugly way JS works with strings, we have to use a typed Array
 					xhr.send(new Uint8Array(postdata));
 				}
-				filereader.readAsBinaryString(file);
+				filereader.readAsText(file);
 			}
 		}
 	})();
