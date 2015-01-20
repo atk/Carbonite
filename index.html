@@ -285,7 +285,7 @@ fieldset {
 						'Content-Type: application/octet-stream\r\n\r\n').replace(/[^\x00]/g, function(c) { postdata.push(c.charCodeAt(0)); });
 					for (var i = 0, l = upload.length; i < l; i++) { postdata.push(upload[i]); }
 					('\r\n--' + boundary + '--\r\n').replace(/[^\x00]/g, function(c) { postdata.push(c.charCodeAt(0)); });
-					xhr.open('POST', 'http://dirk.hekko.pl/carb_q/upload');
+					xhr.open('POST', '//dirk.hekko.pl/carb_q/upload');
 					xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
 					xhr.onreadystatechange = function() {
 						if (this.readyState != 4) { return; }
